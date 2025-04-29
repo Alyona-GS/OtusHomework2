@@ -1,0 +1,13 @@
+/home/asgor/IdeaProjects/Otus_00/src/main/java/annotations/Path.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/common/Common.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/common/Waiters.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/exceptions/BrowserNotFoundException.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/exceptions/PathPageException.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/factory/WebDriverFactory.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/factory/settings/ChromeSettings.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/factory/settings/FirefoxSettings.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/modules/GuiceModule.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/pages/AbsBasePage.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/pages/AbsCoursePage.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/pages/CoursesCataloguePage.java
+/home/asgor/IdeaProjects/Otus_00/src/main/java/pages/MainPage.java

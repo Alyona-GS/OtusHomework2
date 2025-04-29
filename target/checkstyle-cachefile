@@ -1,0 +1,20 @@
+#Sun Apr 27 21:57:43 SAMT 2025
+configuration*?=5176F96428ABD745687793633CE26DA5F87919F2
+/home/asgor/IdeaProjects/Otus_00/src/main/java/common/Waiters.java=1745775711972
+/home/asgor/IdeaProjects/Otus_00/src/main/java/enums/CourseCategories.java=1740306518086
+/home/asgor/IdeaProjects/Otus_00/src/test/java/CoursesCataloguePageTest.java=1745606627572
+/home/asgor/IdeaProjects/Otus_00/src/test/java/extensions/UIExtensions.java=1745775871227
+/home/asgor/IdeaProjects/Otus_00/src/main/java/general/General.java=1740158232191
+/home/asgor/IdeaProjects/Otus_00/src/test/java/MainPageTest.java=1745776052248
+/home/asgor/IdeaProjects/Otus_00/src/main/java/exceptions/BrowserNotFoundException.java=1741279467680
+/home/asgor/IdeaProjects/Otus_00/src/main/java/annotations/Path.java=1745775625898
+/home/asgor/IdeaProjects/Otus_00/src/main/java/exceptions/PathPageException.java=1741279467682
+/home/asgor/IdeaProjects/Otus_00/src/main/java/factory/settings/ChromeSettings.java=1741279467680
+/home/asgor/IdeaProjects/Otus_00/src/main/java/common/Common.java=1745688052048
+/home/asgor/IdeaProjects/Otus_00/src/main/java/factory/WebDriverFactory.java=1745775871206
+/home/asgor/IdeaProjects/Otus_00/src/main/java/factory/settings/FirefoxSettings.java=1741279467680
+/home/asgor/IdeaProjects/Otus_00/src/main/java/pages/AbsBasePage.java=1745776661379
+/home/asgor/IdeaProjects/Otus_00/src/main/java/pages/AbsCoursePage.java=1742580916049
+/home/asgor/IdeaProjects/Otus_00/src/main/java/modules/GuiceModule.java=1745775646620
+/home/asgor/IdeaProjects/Otus_00/src/main/java/pages/MainPage.java=1745775871218
+/home/asgor/IdeaProjects/Otus_00/src/main/java/pages/CoursesCataloguePage.java=1745776015792
