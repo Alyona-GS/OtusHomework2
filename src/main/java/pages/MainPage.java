@@ -25,7 +25,8 @@ public class MainPage extends AbsBasePage<MainPage> {
         int choice = (int) (Math.random() * categoriesInMenu.size());
         WebElement category = categoriesInMenu.get(choice);
         String categoryText = category.getText();
+        guiceScoped.category = categoryText;
         category.click();
-        return new CoursesCataloguePage(categoryText, guiceScoped);
+        return new CoursesCataloguePage(guiceScoped);
     }
 }

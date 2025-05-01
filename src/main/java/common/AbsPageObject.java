@@ -1,7 +1,6 @@
-package pageObject;
+package common;
 
 import com.google.inject.Inject;
-import common.Waiters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;

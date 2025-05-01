@@ -5,6 +5,8 @@ import io.cucumber.java.ru.Пусть;
 import pages.CoursesCataloguePage;
 import pages.MainPage;
 
+import java.lang.invoke.StringConcatFactory;
+
 public class CommonSteps {
     @Inject
     private CoursesCataloguePage coursesCataloguePage;
@@ -17,9 +19,14 @@ public class CommonSteps {
         coursesCataloguePage.open();
     }
 
-    @Пусть("Открыта главная страница в браузере")
+    @Пусть("Открыта главная страница")
     public void openMainPage() {
         mainPage.open();
+    }
+
+    @Пусть("^Пусть Я открываю браузер (.*)$")
+    public void openBrowser(String text) {
+
     }
 
 }

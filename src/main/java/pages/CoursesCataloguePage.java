@@ -34,11 +34,6 @@ public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
         super(guiceScoped);
     }
 
-    public CoursesCataloguePage(String category, GuiceScoped guiceScoped) {
-        super(guiceScoped);
-        this.category = category;
-    }
-
     public CoursesCataloguePage findCoursePlateByCourseName(String courseName) {
         WebElement buttonShowMore = findElement(By.xpath("//*[contains(@class, 'sc-1qig7zt-0 bYRRHi sc-prqxfo-0 cXVWAS')]"));
         boolean courseNotVisible = true;
@@ -138,8 +133,8 @@ public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
     }
 
     public CoursesCataloguePage checkCatalogueUrl() {
-        if (category != null) {
-            String param = switch (category) {
+        if (guiceScoped.category != null) {
+            String param = switch (guiceScoped.category) {
                 case "Программирование" -> "programming";
                 case "Архитектура" -> "architecture";
                 case "Data Science" -> "data-science";

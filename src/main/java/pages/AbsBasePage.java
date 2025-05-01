@@ -2,9 +2,8 @@ package pages;
 
 import annotations.Path;
 import exceptions.PathPageException;
-import common.Common;
 import org.openqa.selenium.*;
-import pageObject.AbsPageObject;
+import common.AbsPageObject;
 import support.GuiceScoped;
 
 public abstract class AbsBasePage<T> extends AbsPageObject<T> {
