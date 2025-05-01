@@ -1,12 +1,19 @@
 package pages;
 
 import annotations.Path;
+import com.google.inject.Inject;
+import org.assertj.core.api.Assert;
+import org.assertj.core.api.Assertions;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import support.GuiceScoped;
+
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,12 +29,13 @@ public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
     private List<String> minDateCourses;
     private List<String> maxDateCourses;
 
-    public CoursesCataloguePage(WebDriver driver) {
-        super(driver);
+    @Inject
+    public CoursesCataloguePage(GuiceScoped guiceScoped) {
+        super(guiceScoped);
     }
 
-    public CoursesCataloguePage(String category, WebDriver driver) {
-        super(driver);
+    public CoursesCataloguePage(String category, GuiceScoped guiceScoped) {
+        super(guiceScoped);
         this.category = category;
     }
 
@@ -57,7 +65,7 @@ public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
         WebElement plate = driver.findElement(By.xpath("//section/div/div/a[contains(@class, 'sc-zzdkm7-0') and contains(.//h6, '" + courseName + "')]"));
         this.waiters.waitForElementToBeClickable(plate);
         plate.click();
-        return new AbsCoursePage(driver);
+        return new AbsCoursePage(guiceScoped);
     }
 
     public CoursesCataloguePage findMinMaxDateCourses() {
@@ -157,6 +165,23 @@ public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
                 }
             }
         }
+        return this;
+    }
+
+    @FindBy(xpath = "//div[text()='Каталог']")
+    private WebElement header;
+
+    @FindBy(xpath = "//*[text()='Направление']/../following-sibling::div//input")
+    private List<WebElement> checkBoxInputs;
+
+    public CoursesCataloguePage checkCatalogPageVisibility(){
+        Assertions.assertThat(waiters.waitForElementVisible(header)).isTrue();
+        return this;
+    }
+
+    public CoursesCataloguePage checkCheckBoxInput(int index, boolean isChecked){
+        WebElement checkBoxInput = checkBoxInputs.get(--index);
+        Assertions.assertThat(isChecked).isEqualTo(checkBoxInput.isSelected());
         return this;
     }
 }

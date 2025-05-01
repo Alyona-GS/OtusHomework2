@@ -1,16 +1,19 @@
 package pages;
 
 import annotations.Path;
+import com.google.inject.Inject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import support.GuiceScoped;
+
 import java.util.List;
 
 @Path("/")
 public class MainPage extends AbsBasePage<MainPage> {
-
-    public MainPage(WebDriver driver) {
-        super(driver);
+    @Inject
+    public MainPage(GuiceScoped guiceScoped) {
+        super(guiceScoped);
     }
 
     public MainPage clickMenuLearning() {
@@ -23,6 +26,6 @@ public class MainPage extends AbsBasePage<MainPage> {
         WebElement category = categoriesInMenu.get(choice);
         String categoryText = category.getText();
         category.click();
-        return new CoursesCataloguePage(categoryText, driver);
+        return new CoursesCataloguePage(categoryText, guiceScoped);
     }
 }

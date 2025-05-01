@@ -4,33 +4,25 @@ import annotations.Path;
 import exceptions.PathPageException;
 import common.Common;
 import org.openqa.selenium.*;
+import pageObject.AbsPageObject;
+import support.GuiceScoped;
 
-public abstract class AbsBasePage<T> extends Common {
+public abstract class AbsBasePage<T> extends AbsPageObject<T> {
     public String baseUrl = "https://otus.ru";//System.getProperty("base.url");
 
-    public AbsBasePage(WebDriver driver) {
-        super(driver);
-        baseUrl = baseUrl;
+    public AbsBasePage(GuiceScoped guiceScoped) {
+        super(guiceScoped);
     }
 
     public T open() {
-        String path = getPath();
-        if(path.isEmpty()) {
-            throw new PathPageException();
-        }
-        driver.get(baseUrl + path);
         driver.manage().window().maximize();
+        driver.get(baseUrl + getPath());
 
-        //By byBanner = By.xpath("//*[contains(@class, 'sticky-banner__close js-sticky-banner-close')]");
         By byBanner2 = By.xpath("//button[contains(@class, 'sc-bvhtwp-0 fyDiti')]");
-
-        //this.waiters.waitForElementVisible(driver.findElement(byBanner));
         this.waiters.waitForElementVisible(driver.findElement(byBanner2));
-
-        //findElement(byBanner).click();
         findElement(byBanner2).click();
 
-        return (T)this;
+        return (T) this;
     }
 
     public String getPath() {
