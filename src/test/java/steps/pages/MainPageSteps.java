@@ -3,7 +3,6 @@ package steps.pages;
 import com.google.inject.Inject;
 import io.cucumber.java.ru.Если;
 import io.cucumber.java.ru.И;
-import pages.CoursesCataloguePage;
 import pages.MainPage;
 
 public class MainPageSteps {

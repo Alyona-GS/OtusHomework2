@@ -5,8 +5,6 @@ import io.cucumber.java.ru.Пусть;
 import pages.CoursesCataloguePage;
 import pages.MainPage;
 
-import java.lang.invoke.StringConcatFactory;
-
 public class CommonSteps {
     @Inject
     private CoursesCataloguePage coursesCataloguePage;
