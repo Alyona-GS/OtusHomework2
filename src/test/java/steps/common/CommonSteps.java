@@ -22,9 +22,4 @@ public class CommonSteps {
         mainPage.open();
     }
 
-    @Пусть("^Пусть Я открываю браузер (.*)$")
-    public void openBrowser(String text) {
-
-    }
-
 }
