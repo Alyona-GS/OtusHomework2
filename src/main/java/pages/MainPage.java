@@ -3,7 +3,6 @@ package pages;
 import annotations.Path;
 import com.google.inject.Inject;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import support.GuiceScoped;
 
@@ -21,11 +20,10 @@ public class MainPage extends AbsBasePage<MainPage> {
         return this;
     }
     public CoursesCataloguePage clickRandomCategoryInMenu() {
-        List<WebElement> categoriesInMenu = driver.findElements(By.xpath("//a[contains(@href, 'https://otus.ru/categories/')]")).stream().toList();
+        List<WebElement> categoriesInMenu = driver.findElements(By.xpath("//a[contains(@href, 'https://otus.ru/categories/')]"));
         int choice = (int) (Math.random() * categoriesInMenu.size());
         WebElement category = categoriesInMenu.get(choice);
-        String categoryText = category.getText();
-        guiceScoped.category = categoryText;
+        guiceScoped.category = category.getText();
         category.click();
         return new CoursesCataloguePage(guiceScoped);
     }

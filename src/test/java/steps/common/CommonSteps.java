@@ -12,13 +12,15 @@ public class CommonSteps {
     @Inject
     private MainPage mainPage;
 
-    @Пусть("Открыта страница каталога курсов")
+    @Пусть("^Открыта страница каталога курсов$")
     public void openPage() {
+        System.out.println("here");
         coursesCataloguePage.open();
     }
 
-    @Пусть("Открыта главная страница")
+    @Пусть("^Открыта главная страница$")
     public void openMainPage() {
+        System.out.println("her");
         mainPage.open();
     }
 

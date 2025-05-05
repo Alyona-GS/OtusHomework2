@@ -2,28 +2,24 @@ package pages;
 
 import annotations.Path;
 import com.google.inject.Inject;
-import org.assertj.core.api.Assert;
 import org.assertj.core.api.Assertions;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import support.GuiceScoped;
-
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 @Path("/catalog/courses")
 public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
-    private String category;
     private String minDate;
     private String maxDate;
     private List<String> minDateCourses;
@@ -39,7 +35,7 @@ public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
         boolean courseNotVisible = true;
         while (courseNotVisible) {
             this.waiters.waitForElementVisible(driver.findElement(By.tagName("h6")));
-            List<String> visibleCourseNames = driver.findElements(By.tagName("h6")).stream().map(WebElement::getText).toList();
+            List<String> visibleCourseNames = driver.findElements(By.tagName("h6")).stream().map(WebElement::getText).collect(Collectors.toList());
             for (String course : visibleCourseNames) {
                 if (course.equals(courseName)) {
                     courseNotVisible = false;
@@ -80,7 +76,7 @@ public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
                     } catch (ParseException e) {
                         throw new RuntimeException(e);
                     }
-                }).toList();
+                }).collect(Collectors.toList());
 
         String minDate = format.format(dates.stream().min(Date::compareTo).get());
         String maxDate = format.format(dates.stream().max(Date::compareTo).get());
@@ -95,7 +91,7 @@ public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
                     } else {
                         return text;
                     }
-                }).toList();
+                }).collect(Collectors.toList());
 
         maxDateCourses = driver
                 .findElements(By.xpath("//section/div/div/a[contains(@class, 'sc-zzdkm7-0')]"))
@@ -107,7 +103,7 @@ public class CoursesCataloguePage extends AbsBasePage<CoursesCataloguePage> {
                     } else {
                         return text;
                     }
-                }).toList();
+                }).collect(Collectors.toList());
         return this;
     }
 

@@ -25,12 +25,12 @@ public class CoursesCataloguePageSteps {
         coursesCataloguePage.clickCoursePlate(text);
     }
 
-    @Если("Найдены самые ранние и поздние курсы")
+    @Если("^Найдены самые ранние и поздние курсы$")
     public void findCourses () {
         coursesCataloguePage.findMinMaxDateCourses();
     }
 
-    @Тогда("Проверяем даты и названия курсов")
+    @Тогда("^Проверяем даты и названия курсов$")
     public void checkDates () {
         coursesCataloguePage.nameAndDateOnMinMaxPlateCoursesIsRight();
     }
