@@ -1,7 +1,7 @@
 package steps.common;
 
 import com.google.inject.Inject;
-//import io.cucumber.java.ru.Пусть;
+import io.cucumber.java.ru.Пусть;
 import pages.CoursesCataloguePage;
 import pages.MainPage;
 
@@ -14,13 +14,11 @@ public class CommonSteps {
 
     @Пусть("^Открыта страница каталога курсов$")
     public void openPage() {
-        System.out.println("here");
         coursesCataloguePage.open();
     }
 
     @Пусть("^Открыта главная страница$")
     public void openMainPage() {
-        System.out.println("her");
         mainPage.open();
     }
 

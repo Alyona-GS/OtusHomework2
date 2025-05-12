@@ -18,6 +18,7 @@
         <webdrivermanager.version>5.9.2</webdrivermanager.version>
         <assertj.version>3.27.3</assertj.version>
         <guice.version>7.0.0</guice.version>
+        <cucumber.version>7.22.1</cucumber.version>
 
         <base.url>https://otus.ru</base.url>
         <browser.name>chrome</browser.name>
@@ -78,17 +79,22 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-guice</artifactId>
-            <version>6.11.0</version>
+            <version>${cucumber.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>6.11.0</version>
+            <version>${cucumber.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
-            <version>6.11.0</version>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>${cucumber.version}</version>
         </dependency>
     </dependencies>
     <build>
