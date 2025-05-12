@@ -1,7 +1,7 @@
 package steps.common;
 
 import com.google.inject.Inject;
-import io.cucumber.java.ru.Пусть;
+//import io.cucumber.java.ru.Пусть;
 import pages.CoursesCataloguePage;
 import pages.MainPage;
 
